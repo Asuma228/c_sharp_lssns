@@ -21,11 +21,12 @@ namespace c_sharp_lssns
 
         private void tsmiExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // Кнопка "Выход" в меню "Файл"
         }
 
         private void tsmiAbout_Click(object sender, EventArgs e)
         {
+            // О программе
             MessageBox.Show("Программа 'Мои утилиты' содержит ряд небольших полезных программ", "О программе");
         }
 
