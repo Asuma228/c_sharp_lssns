@@ -13,10 +13,12 @@ namespace c_sharp_lssns
     public partial class MainForm : Form
     {
         int count = 0; // Задаём начальное значение счетчика
+        Random rnd; // Объявление экземпляра класса "Random"
 
         public MainForm()
         {
             InitializeComponent();
+            rnd = new Random(); // Создание объекта - экземпляра класса
         }
 
         private void tsmiExit_Click(object sender, EventArgs e)
@@ -46,6 +48,12 @@ namespace c_sharp_lssns
         {
             count = 0; // Сбрасываем значение переменной-счетчика
             lblCounter.Text = Convert.ToString(count); // Выводим на форму, сконвертировав в строковый тип с помощью метода ToString из класса Convert
+        }
+
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            lblRandom.Text = Convert.ToString(rnd.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value)+1)); 
+        //метка на форме = конвертация в строку(сгенерировать следующее случайное число(от этого значения, до этого + 1))
         }
     }
 }
